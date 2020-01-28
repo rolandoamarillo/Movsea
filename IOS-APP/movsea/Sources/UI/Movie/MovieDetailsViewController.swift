@@ -60,13 +60,13 @@ class MovieDetailsViewController: ModalBaseViewController {
         posterHeight.constant = (self.view.bounds.height - 64 - 16) * 0.55
 
         let ratingString = String(format:"%1.1f", movie.rating) + "/10"
-        let attributedText = NSMutableAttributedString(string: ratingString, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.semibold)])
-        attributedText.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12)], range: NSRange(location: 3, length: 3))
+        let attributedText = NSMutableAttributedString(string: ratingString, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.semibold)])
+        attributedText.addAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12)], range: NSRange(location: 3, length: 3))
         
         ratingLabel.attributedText = attributedText
         
-        trailerButton.setFAText(prefixText: "", icon: FAType.FAPlayCircle, postfixText: " Watch trailer", size: 12, forState: UIControlState(), iconSize: 16)
-        trailerButton.setFATitleColor(color: UIColor.black, forState: UIControlState())
+        trailerButton.setFAText(prefixText: "", icon: FAType.FAPlayCircle, postfixText: " Watch trailer", size: 12, forState: UIControl.State(), iconSize: 16)
+        trailerButton.setFATitleColor(color: UIColor.black, forState: UIControl.State())
         
         titleLabel.text = movie.title
         countryLabel.text = movie.country + ", " + movie.year
@@ -74,7 +74,7 @@ class MovieDetailsViewController: ModalBaseViewController {
         // descriptionLabel.text = String(format: "Director: %@ \nStars: %@ \nDescription: %@", movie.directors, movie.stars, movie.movieDescription)
         
         // Bold headers of description
-        let boldAtt = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)]
+        let boldAtt = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)]
         
         let fullDescriptionString = "Director: \(movie.directors) \nStars: \(movie.stars) \nDescription: \(movie.movieDescription)" as NSString
         let descriptionAttributedString = NSMutableAttributedString(string: fullDescriptionString as String)
@@ -138,7 +138,7 @@ class MovieDetailsViewController: ModalBaseViewController {
     @IBAction func onShareButton(_ sender: AnyObject) {
         guard let movie = movie else { return }
 
-        let excludeActivities = [UIActivityType.airDrop, UIActivityType.print, UIActivityType.assignToContact,UIActivityType.saveToCameraRoll, UIActivityType.addToReadingList, UIActivityType.postToFlickr, UIActivityType.postToVimeo];
+        let excludeActivities = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.print, UIActivity.ActivityType.assignToContact,UIActivity.ActivityType.saveToCameraRoll, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.postToFlickr, UIActivity.ActivityType.postToVimeo];
         
         let textToShare = "I found the movie \(movie.title) using this awesome application Movsea."
         guard let urlToShare = URL(string: linkToAppStore) else {

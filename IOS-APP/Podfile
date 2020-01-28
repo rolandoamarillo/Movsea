@@ -9,10 +9,10 @@ def shared_pods
 	pod 'Alamofire', '~> 4.0'
 	pod 'AlamofireImage'
 
-	pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-4'
+	pod 'ObjectMapper', '~> 3.4'
 	pod 'IQKeyboardManagerSwift'
 
-	pod 'RealmSwift'
+	pod 'RealmSwift', '~> 4.3.1'
 end
 
 target 'movsea' do

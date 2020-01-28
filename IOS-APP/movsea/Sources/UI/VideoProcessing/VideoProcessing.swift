@@ -55,7 +55,7 @@ class SearchVideoController: ModalBaseViewController {
                     self.navigationController?.pushViewController(movieDetailsViewController, animated: true)
                 case .failure(let error):
                     guard let notFoundController = R.storyboard.main.notFoundController() else { return }
-                    notFoundController.error = error as NSError!
+                    notFoundController.error = error as NSError?
                     self.navigationController?.pushViewController(notFoundController, animated: true)
             }
         }
@@ -81,7 +81,7 @@ class NotFoundController: ModalBaseViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: true)
 
-        tryButton.setFAIcon(icon: FAType.FAUndo, iconSize: 54, forState: UIControlState())
+        tryButton.setFAIcon(icon: FAType.FAUndo, iconSize: 54, forState: UIControl.State())
         tryButton.setFATitleColor(color: UIColor.white)
 
         

@@ -38,19 +38,19 @@ class MainViewController: BaseViewController {
         
         let findings = UIButton(type: .custom)
         findings.addTarget(self, action: #selector(onFindingsButton), for: .touchUpInside)
-        findings.setFAText(prefixText: "", icon: FAType.FAFilm, postfixText: " Findings", size: 16, forState: UIControlState())
+        findings.setFAText(prefixText: "", icon: FAType.FAFilm, postfixText: " Findings", size: 16, forState: UIControl.State())
         findings.setFATitleColor(color: UIColor.white)
         findings.sizeToFit()        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: findings)
         
         let settings = UIButton(type: .custom)
         settings.addTarget(self, action: #selector(onSettingsButton), for: .touchUpInside)
-        settings.setFAText(prefixText: "Settings ", icon: FAType.FACog, postfixText: "", size: 16, forState: UIControlState())
+        settings.setFAText(prefixText: "Settings ", icon: FAType.FACog, postfixText: "", size: 16, forState: UIControl.State())
         settings.setFATitleColor(color: UIColor.white)
         settings.sizeToFit()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: settings)
         
-        searchButton.setFAText(prefixText: "", icon: FAType.FASearch, postfixText: " SEARCH MOVIE", size: 18, forState: UIControlState())
+        searchButton.setFAText(prefixText: "", icon: FAType.FASearch, postfixText: " SEARCH MOVIE", size: 18, forState: UIControl.State())
         searchButton.setFATitleColor(color: UIColor.white)
     }
     
